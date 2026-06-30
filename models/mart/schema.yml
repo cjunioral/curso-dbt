@@ -1,0 +1,9 @@
+models:
+  - name: fct_pedidos
+    columns:
+      - name: status
+        description: "Status pedido"
+        test:
+          - accepted_values:
+            arguments:
+              values: ['undefined','refunded','paid','shipped','completed','processing','canceled']
