@@ -1,0 +1,15 @@
+models:
+  - name: stg_clientes
+    columns:
+      - name: id_cliente
+        tests:
+          - not_null
+          - unique
+  - name: stg_pedidos
+    columns:
+      - name: id_cliente
+        tests: 
+        - relationships:
+            arguments:
+              to: ref('stg_clientes')
+              field: id_cliente
